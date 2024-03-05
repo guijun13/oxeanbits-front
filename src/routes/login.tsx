@@ -1,7 +1,7 @@
 import { Button } from '@progress/kendo-react-buttons';
-import { Input } from '@progress/kendo-react-inputs';
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import FormInput from '../components/formInput';
 
 const Login: React.FC = () => {
   const [email, setEmail] = useState('');
@@ -24,14 +24,13 @@ const Login: React.FC = () => {
     <div className="m-10">
       <h2>Login</h2>
       <form onSubmit={handleSubmit}>
-        <div>
-          <label>Email:</label>
-          <Input type="email" value={email} onChange={handleEmailChange} />
-        </div>
-        <div>
-          <label>Password:</label>
-          <Input type="password" value={password} onChange={handlePasswordChange} />
-        </div>
+        <FormInput type="email" labelText="Email" value={email} onChange={handleEmailChange} />
+        <FormInput
+          type="password"
+          labelText="Password"
+          value={password}
+          onChange={handlePasswordChange}
+        />
         <Link to="/movies">
           <Button type="submit">Login</Button>
         </Link>
