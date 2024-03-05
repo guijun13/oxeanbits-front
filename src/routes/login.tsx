@@ -32,7 +32,7 @@ const Login: React.FC = () => {
           <label>Password:</label>
           <Input type="password" value={password} onChange={handlePasswordChange} />
         </div>
-        <Link to="/">
+        <Link to="/movies">
           <Button type="submit">Login</Button>
         </Link>
       </form>

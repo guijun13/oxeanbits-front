@@ -2,8 +2,9 @@ import { Button } from '@progress/kendo-react-buttons';
 import { Input } from '@progress/kendo-react-inputs';
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import TopLogin from '../components/topLogin';
 
-export default function Movie() {
+export default function Movies() {
   const [title, setTitle] = useState('');
   const [director, setDirector] = useState('');
 
@@ -22,6 +23,7 @@ export default function Movie() {
 
   return (
     <div className="m-10">
+      <TopLogin />
       <h2>New movie</h2>
       <form onSubmit={handleSubmit}>
         <div>

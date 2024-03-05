@@ -1,19 +1,12 @@
 import '@progress/kendo-theme-default/dist/all.css';
 import { Button } from '@progress/kendo-react-buttons';
 import { Input } from '@progress/kendo-react-inputs';
-import { Link } from 'react-router-dom';
+import TopLogin from '../components/topLogin';
 
 export default function Signup() {
   return (
     <div className="m-10">
-      <div className="flex my-4">
-        <Link to="/signup">
-          <Button className="mr-10">Create user</Button>
-        </Link>
-        <Link to="/login">
-          <Button>Logout</Button>
-        </Link>
-      </div>
+      <TopLogin />
       <div>
         <h1 className="text-xl font-bold">Register</h1>
         <div className="row example-wrapper" style={{ minHeight: 450 }}>
