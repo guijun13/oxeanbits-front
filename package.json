@@ -30,8 +30,12 @@
     "@progress/kendo-react-treeview": "^7.2.3",
     "@progress/kendo-svg-icons": "^2.1.0",
     "@progress/kendo-theme-default": "^7.2.0",
+    "localforage": "^1.10.0",
+    "match-sorter": "^6.3.4",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.22.2",
+    "sort-by": "^1.2.0"
   },
   "devDependencies": {
     "@types/react": "^18.2.56",
