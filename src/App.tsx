@@ -31,7 +31,9 @@ export default function App() {
       <div>
         <h1 className="text-xl font-bold">Movies</h1>
         <div>
-          <Button>Add new</Button>
+          <Link to="/new/movie">
+            <Button>Add new</Button>
+          </Link>
         </div>
         <Grid
           style={{

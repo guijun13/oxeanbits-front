@@ -5,11 +5,12 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import './index.css';
 import Signup from './routes/signup.tsx';
 import Login from './routes/login.tsx';
+import Movie from './routes/movie.tsx';
 
 const router = createBrowserRouter([
   {
     path: '/',
-    element: <App />,
+    element: <Login />,
   },
   {
     path: 'signup',
@@ -18,6 +19,14 @@ const router = createBrowserRouter([
   {
     path: 'login',
     element: <Login />,
+  },
+  {
+    path: 'movie',
+    element: <App />,
+  },
+  {
+    path: 'new/movie',
+    element: <Movie />,
   },
 ]);
 
