@@ -1,46 +1,44 @@
-import '@progress/kendo-theme-default/dist/all.css';
-import { Grid, GridColumn as Column } from '@progress/kendo-react-grid';
-import { Button } from '@progress/kendo-react-buttons';
-import { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
-import TopLogin from './components/topLogin';
+import { Routes, Route } from 'react-router-dom';
 
-export default function App() {
-  const [movies, setMovies] = useState([]);
+import { AuthProvider } from './hooks/useAuth';
+import MoviesList from './routes/moviesList';
+import Signup from './routes/signup';
+import { ProtectedRoute } from './components/protectedRoute';
+import Login from './routes/login';
+import NewMovie from './routes/newMovie';
 
-  useEffect(() => {
-    fetch('http://localhost:3000/movies')
-      .then((res) => {
-        return res.json();
-      })
-      .then((data) => {
-        console.log(data);
-        setMovies(data);
-      });
-  }, []);
-
+function App() {
   return (
-    <div className="m-10">
-      <TopLogin />
-      <div>
-        <h1 className="text-xl font-bold">Movies</h1>
-        <div>
-          <Link to="/movies/new">
-            <Button>Add new</Button>
-          </Link>
-        </div>
-        <Grid
-          style={{
-            height: '400px',
-          }}
-          data={movies}
-        >
-          <Column field="id" title="ID" width="40px" />
-          <Column field="title" title="Title" width="250px" />
-          <Column field="director" title="Director" width="250px" />
-          <Column field="average_score" title="Rate" width="250px" />
-        </Grid>
-      </div>
-    </div>
+    <AuthProvider>
+      <Routes>
+        <Route path="/" element={<Login />} />
+        <Route
+          path="/movies"
+          element={
+            <ProtectedRoute>
+              <MoviesList />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/movies/new"
+          element={
+            <ProtectedRoute>
+              <NewMovie />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/signup"
+          element={
+            <ProtectedRoute>
+              <Signup />
+            </ProtectedRoute>
+          }
+        />
+      </Routes>
+    </AuthProvider>
   );
 }
+
+export default App;
