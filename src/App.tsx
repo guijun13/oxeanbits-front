@@ -2,6 +2,7 @@ import '@progress/kendo-theme-default/dist/all.css';
 import { Grid, GridColumn as Column } from '@progress/kendo-react-grid';
 import { Button } from '@progress/kendo-react-buttons';
 import { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 
 export default function App() {
   const [movies, setMovies] = useState([]);
@@ -20,8 +21,12 @@ export default function App() {
   return (
     <div className="m-10">
       <div className="flex my-4">
-        <Button className="mr-10">Create user</Button>
-        <Button>Logout</Button>
+        <Link to="/signup">
+          <Button className="mr-10">Create user</Button>
+        </Link>
+        <Link to="/login">
+          <Button>Logout</Button>
+        </Link>
       </div>
       <div>
         <h1 className="text-xl font-bold">Movies</h1>
