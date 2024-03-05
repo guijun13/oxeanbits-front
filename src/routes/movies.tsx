@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 import TopLogin from '../components/topLogin';
 import { useAuth } from '../hooks/useAuth';
 
-export default function MoviesList() {
+export default function Movies() {
   const [movies, setMovies] = useState([]);
 
   const { logout } = useAuth();

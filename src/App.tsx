@@ -1,11 +1,11 @@
 import { Routes, Route } from 'react-router-dom';
 
 import { AuthProvider } from './hooks/useAuth';
-import MoviesList from './routes/moviesList';
 import Signup from './routes/signup';
 import { ProtectedRoute } from './components/protectedRoute';
 import Login from './routes/login';
 import NewMovie from './routes/newMovie';
+import Movies from './routes/movies';
 
 function App() {
   return (
@@ -16,7 +16,7 @@ function App() {
           path="/movies"
           element={
             <ProtectedRoute>
-              <MoviesList />
+              <Movies />
             </ProtectedRoute>
           }
         />
