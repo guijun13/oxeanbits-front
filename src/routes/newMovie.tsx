@@ -1,6 +1,6 @@
 import { Button } from '@progress/kendo-react-buttons';
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import TopLogin from '../components/topLogin';
 import FormInput from '../components/formInput';
 import { useAuth } from '../hooks/useAuth';
@@ -10,6 +10,7 @@ export default function NewMovie() {
   const [director, setDirector] = useState('');
 
   const { logout } = useAuth();
+  const navigate = useNavigate();
 
   const handleLogout = () => {
     logout();
@@ -25,7 +26,23 @@ export default function NewMovie() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Add your login logic here
+    fetch('http://localhost:3000/movies', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        title,
+        director,
+      }),
+    }).then((res) => {
+      if (res.status === 201) {
+        console.log('Movie created');
+        navigate('/movies');
+      } else {
+        console.error('Movie creation failed');
+      }
+    });
   };
 
   return (
@@ -40,9 +57,7 @@ export default function NewMovie() {
           value={director}
           onChange={handleDirectorChange}
         />
-        <Link to="/">
-          <Button type="submit">Create movie</Button>
-        </Link>
+        <Button type="submit">Create movie</Button>
       </form>
     </div>
   );
