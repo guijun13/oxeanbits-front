@@ -1,30 +1,35 @@
-# React + TypeScript + Vite
+# Oxeanbits Front
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Prerequisites
 
-Currently, two official plugins are available:
+* [Git](https://git-scm.com)
+* [Node.js](https://nodejs.org/en/)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Installation
 
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
+```bash
+# clone the repository
+git clone https://github.com/guijun13/oxeanbits-front.git
 ```
+```
+Sign-in to https://identity.telerik.com/login and access your kendo-ui-license.txt. Past it in the file root
+```
+```
+Sign-in to https://developer.themoviedb.org/ and access your Access Token Auth. Create a .env file in the file root and paste like this:
+VITE_APP_MOVIE_API=<Access Token Auth>
+```
+```bash
+# Install dependencies
+npm install
+```
+```bash
+# Run the application
+npm run dev
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+# It will run on port:3000 - access http://localhost:3000
+```
+```
+Run the backend application at https://github.com/guijun13/oxeanbits-back to log in with:
+username: admin@rotten
+password: admin
+```
