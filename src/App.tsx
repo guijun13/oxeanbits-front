@@ -6,6 +6,7 @@ import { ProtectedRoute } from './components/protectedRoute';
 import Login from './routes/login';
 import NewMovie from './routes/newMovie';
 import Movies from './routes/movies';
+import TopMovies from './routes/topMovies';
 
 function App() {
   return (
@@ -33,6 +34,14 @@ function App() {
           element={
             <ProtectedRoute>
               <Signup />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/movies/top"
+          element={
+            <ProtectedRoute>
+              <TopMovies />
             </ProtectedRoute>
           }
         />
