@@ -49,12 +49,15 @@ export default function Signup() {
         },
       }),
     }).then((res) => {
-      console.log(res);
+      if (password !== confirmPassword) {
+        alert('Passwords do not match');
+        return false;
+      }
       if (res.status === 201) {
         console.log('Signup successful');
         login({ email, password });
       } else {
-        console.error('Signup failed');
+        alert('Signup failed');
       }
     });
     return true;
@@ -67,15 +70,29 @@ export default function Signup() {
         <h1 className="text-xl font-bold">Register</h1>
         <form onSubmit={handleSubmit} className="row example-wrapper" style={{ minHeight: 450 }}>
           <div className="col-12 col-md-6 example-col">
-            <FormInput type="text" labelText="Name" value={username} onChange={handleUsername} />
-            <FormInput type="email" labelText="Email" value={email} onChange={handleEmail} />
             <FormInput
+              required
+              type="text"
+              labelText="Name"
+              value={username}
+              onChange={handleUsername}
+            />
+            <FormInput
+              required
+              type="email"
+              labelText="Email"
+              value={email}
+              onChange={handleEmail}
+            />
+            <FormInput
+              required
               type="password"
               labelText="Password"
               value={password}
               onChange={handlePassword}
             />
             <FormInput
+              required
               type="password"
               labelText="Confirm password"
               value={confirmPassword}

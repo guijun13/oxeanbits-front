@@ -48,10 +48,17 @@ export default function NewMovie() {
   return (
     <div className="m-10">
       <TopLogin handleLogout={handleLogout} />
-      <h2>New movie</h2>
+      <h2 className="font-bold text-2xl">New movie</h2>
       <form onSubmit={handleSubmit}>
-        <FormInput type="text" labelText="Title" value={title} onChange={handleTitleChange} />
         <FormInput
+          required
+          type="text"
+          labelText="Title"
+          value={title}
+          onChange={handleTitleChange}
+        />
+        <FormInput
+          required
           type="text"
           labelText="Director"
           value={director}

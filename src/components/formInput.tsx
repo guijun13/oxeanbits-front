@@ -6,16 +6,18 @@ export default function FormInput({
   type = 'text',
   value,
   onChange,
+  required = false,
 }: {
   labelText: React.ReactNode;
   type: string;
   value?: string;
   onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  required?: boolean;
 }) {
   return (
-    <div className="flex gap-4">
-      <label>{labelText}</label>
-      <Input type={type} className="w-40" value={value} onChange={onChange} />
+    <div className="flex my-2">
+      <label className="mr-2">{labelText}</label>
+      <Input type={type} className="w-40" value={value} onChange={onChange} required={required} />
     </div>
   );
 }

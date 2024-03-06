@@ -57,10 +57,13 @@ export default function Movies() {
     <div className="m-10">
       <TopLogin handleLogout={handleLogout} />
       <div>
-        <h1 className="text-xl font-bold">Movies</h1>
-        <div>
+        <h1 className="text-2xl font-bold">Movies</h1>
+        <div className="flex my-4 gap-4">
           <Link to="/movies/new">
             <Button>Add new</Button>
+          </Link>
+          <Link to="/movies/top">
+            <Button>Top Movies</Button>
           </Link>
         </div>
         <Grid
@@ -76,10 +79,10 @@ export default function Movies() {
           onItemChange={itemChange}
         >
           <Column field="id" title="ID" width="40px" editable={false} />
-          <Column field="title" title="Title" width="250px" editable={false} />
-          <Column field="director" title="Director" width="250px" editable={false} />
-          <Column field="average_score" title="Average score" width="250px" editable={false} />
-          <Column field="your_score" title="Your score" width="250px" editor="numeric" />
+          <Column field="title" title="Title" editable={false} />
+          <Column field="director" title="Director" editable={false} />
+          <Column field="average_score" title="Average score" width="200px" editable={false} />
+          <Column field="your_score" title="Your score" width="200px" editor="numeric" />
         </Grid>
       </div>
     </div>

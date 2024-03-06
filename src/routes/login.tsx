@@ -40,10 +40,17 @@ export default function Login() {
 
   return (
     <div className="m-10">
-      <h2>Login</h2>
+      <h2 className="text-2xl font-bold">Login</h2>
       <form onSubmit={handleSubmit}>
-        <FormInput type="email" labelText="Email" value={email} onChange={handleEmailChange} />
         <FormInput
+          required
+          type="email"
+          labelText="Email"
+          value={email}
+          onChange={handleEmailChange}
+        />
+        <FormInput
+          required
           type="password"
           labelText="Password"
           value={password}
