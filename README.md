@@ -29,7 +29,7 @@ npm install
 npm run dev
 
 ```
-- It will run on port:3000 - access http://localhost:3000
+- It will run on port:5173 - access http://localhost:5173
 
 - Run the backend application at https://github.com/guijun13/oxeanbits-back to log in with:
 username: admin@rotten
